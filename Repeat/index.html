@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html ng-app="myFirstApp">
+    <head>
+        <script src="angular.min.js"></script>
+        <script src="app.js"></script>
+        <title>Working with lists</title>
+    </head>
+    <body>
+        <div ng-controller="myFirstController">
+            <input type="text" placeholder="Item Name" ng-mode="newItemName">
+            <input type="text" placeholder="Item Quantity" ng-mode="newItemQuantity">
+            <button ng-click="AddtoList()">Add to List</button>
+            <ul>
+                <li ng-repeat="item in list">Bought {{list.item.Name}} in {{list.item.Quantity}}</li>
+            </ul>
+            <input type="text" placeholder="serach" ng-model="search">
+            <ul>
+                <li ng-repeat="item in shoppinglist | filter : serach">{{item}}</li>
+            </ul>
+        </div>
+    </body>
+</html>

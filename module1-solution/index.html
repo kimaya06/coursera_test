@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html ng-app="CheckLunchApp">
+    <head>
+        <script src="angular.min.js"></script>
+        <script src="app.js"></script>
+        <title>Lunch Checker</title>
+    </head>
+    <body>
+        <div ng-controller="CheckLunchController">
+            <h1>Lunch Checker</h1><br>
+            Enter Items That You Are Usually Eat For Lunch (Please use Comma-Separated)<br>
+            NOTE:- Empty item does not consider<br>
+            <input type="text" size="70" placeholder="Enter comma saperated list of items you usually have for lunch" ng-model="items"><br><br>
+            <button ng-click="CheckIfTooMuch()">Check if too much lunch</button><br><br>
+            {{result}}
+        </div>
+    </body>
+</html>

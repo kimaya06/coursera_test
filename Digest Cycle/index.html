@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html ng-app="DCApp">
+    <head>
+        <script src="angular.min.js"></script>
+        <script src="app.js"></script>
+        <title>Digest Cycle</title>
+    </head>
+    <body>
+        <div ng-controller="DCController">
+            <button ng-click=countOnce()>Once Counter</button><br>
+            <button ng-click=upCounter()>Up Counter</button><br>
+            Once Counter:{{onceCounter}}<br>
+            Regular Counter:{{counter}}<br>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html ng-app="myFirstApp">
+    <head>
+        <script src="angular.min.js"></script>
+        <script src="app.js"></script>
+        <title>Hello Coursera</title>
+    </head>
+    <body>
+        <div ng-controller="myFirstController">
+            <input type="text" ng-model="name" ng-keyup="displayNum();">      
+            <div>The input name is:{{name}}</div>
+            <div>The numeric value of input name is:{{totalValue}}</div>
+        </div>
+    </body>
+</html>
