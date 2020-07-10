@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html ng-app='ShoppingListCheckOff'>
+  <head>
+    <meta charset="utf-8">
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <style>
+      .emptyMessage {
+        font-weight: bold;
+        color: red;
+        font-size: 1.2em;
+      }
+      li {
+        margin-bottom: 7px;
+        font-size: 1.2em;
+      }
+      li > button {
+        margin-left: 6px;
+      }
+      button > span {
+        color: green;
+      }
+    </style>
+    <title>Shopping List Check Off</title>
+  </head>
+  <body>
+    <h1>Shopping List Check Off</h1>
+    <div ng-controller='ToBuyController as itemAdder'>
+      <h2>To Buy:</h2>
+      <ol>
+        <li ng-repeat="item in itemAdder.items">
+          Buy {{ item.quantity }} {{ item.name }}
+          <button ng-click="itemAdder.removeItem($index);">Bought</button>
+        </li>
+      </ol>
+      <div ng-if="itemAdder.items.length===0" class="error">Everything is bought!</div>
+    </div>
+
+    <div ng-controller='AlreadyBoughtController as showList'>
+      <h2>Already Bought:</h2>
+      <ol>
+        <li ng-repeat="item in showList.items">
+          Bought {{ item.quantity }} {{ item.name }}
+        </li>
+      </ol>
+      <div ng-if="showList.items.length==0" class="error">Nothing bought yet.</div>
+    </div>
+  </body>
+</html>
