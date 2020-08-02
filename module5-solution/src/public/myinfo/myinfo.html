@@ -1,0 +1,14 @@
+<div ng-if="infoCtrl.firstname == null">Not Signed Up Yet. Sign up Now!</div>
+<div ng-if="infoCtrl.firstname != null">
+First Name: {{infoCtrl.firstname}} <br>
+Last Name: {{infoCtrl.lasttname}} <br>
+Email: {{infoCtrl.email}} <br>
+Phone: {{infoCtrl.phone}} <br>
+Menu Number: {{infoCtrl.menuno}} <br>
+<h1>Menu Items</h1>
+<ul>
+    <li ng-repeat="item in infoCtrl.items.menu_items">
+      {{ item.short_name }} , {{ item.name }} , {{item.description}}
+    </li>
+ </ul> 
+ </div>
